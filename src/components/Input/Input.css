@@ -1,0 +1,16 @@
+.userName, .password{
+    padding: 15px 135px 15px 15px;
+    background-color: #D9D9D9;
+    border: 0;
+    font-size: 14px;
+    color: #8C4763;
+}
+.userName::placeholder, .password::placeholder{
+    color: #8C4763;
+}
+.userName{
+    margin-top: 85px;
+}
+.password{
+    margin-top: 15px;
+}

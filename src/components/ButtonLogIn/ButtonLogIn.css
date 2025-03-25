@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+.buttonLogIn{
+    font-family:  "Inter", serif;
+    text-align: center;
+    padding: 10px 132px;
+    margin-top: 32px;
+    background-color: #D6BCC5;
+    border: 0;
+    color: #121906;
+    font-size: 24px;
+}
+    

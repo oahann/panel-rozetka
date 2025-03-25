@@ -1,0 +1,10 @@
+.innerCards{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    row-gap: 40px;
+    column-gap: 20px;
+}
+.RozetkaLogoProductPreview{
+    margin: 10px 20px 40px 60px;
+}
