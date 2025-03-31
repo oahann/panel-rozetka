@@ -3,10 +3,13 @@ import ProductCard from "../../components/ProductCard/ProductCard";
 import LogoRozetkaSvg from 'D:/hillel_front-end_pro/panel-rozetka/my-app/src/assets/rozetkaLogo.svg';
 import { useState, useEffect } from 'react';
 import { API_URL } from '../../constants';
+import { useNavigate, useParams } from 'react-router-dom';
 
 const ProductPreview = () => {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
+    const navigate = useNavigate();
+    const { productId } = useParams();
 
     useEffect(() => {
         const fetchProducts = async () => {
@@ -20,7 +23,6 @@ const ProductPreview = () => {
                 }
                 
                 const data = await response.json();
-                console.log('Отримані дані:', data);
                 
                 const productsWithFullImageUrl = data.map(product => ({
                     ...product,
@@ -52,16 +54,18 @@ const ProductPreview = () => {
             </div>
         );
     }
-
+    const handleProductClick = (Id) => {
+        navigate(`/product-preview/${Id}`);
+    };
     return(
         <div className="container">
             <img src={LogoRozetkaSvg} alt="LogoRozetka" className='RozetkaLogoProductPreview'/>
             <div className="innerCards">
             {Array.isArray(products) && products.length > 0 ? (
                 products.map((item) => (
-                    <ProductCard 
+                    <ProductCard onClick={() => handleProductClick(item.ID || item.id)}
                         key={item.ID || item.id}
-                        image={item.ImageUrl || item.imageUrl || 'https://via.placeholder.com/200'}
+                        image={item.ImageUrl || item.imageUrl}
                         name={item.Name || item.name}
                         quantity={item.Quantity || item.quantity}
                         price={item["Price (€)"] || item.price}
