@@ -1,4 +1,4 @@
-const Product = ({product, headers}) =>{
+const Product = ({product, headers, onDelete}) =>{
     return(
     <tr>
            {headers.map((header, index) => (
@@ -6,7 +6,7 @@ const Product = ({product, headers}) =>{
       ))}
       <td>
         <button>✏️</button>
-        <button>🗑️</button>
+        <button onClick={onDelete}>🗑️</button>
       </td>
     </tr>
     )

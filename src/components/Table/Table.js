@@ -1,9 +1,7 @@
-import { useState } from "react";
 import './Table.css';
 import Product from '../Product/Product'
    
-    
-const Table = ({ products }) => {
+const Table = ({ products, onDelete }) => {
   const headers = products.length > 0
     ? Object.keys(products[0]).filter(key => key !== 'ImageUrl' && key !== 'IsReady')
     : [];
@@ -20,7 +18,7 @@ const Table = ({ products }) => {
       </thead>
       <tbody>
         {products.map((product, index) => (
-          <Product key={index} product={product} headers={headers} />
+          <Product key={index} product={product} headers={headers} onDelete={() => onDelete(product)}/>
         ))}
       </tbody>
     </table>

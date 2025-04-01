@@ -4,7 +4,7 @@ import PageProductTable from './pages/PageProductTable/PageProductTable';
 import ProductPreview from './pages/ProductPreview/ProductPreview';
 import Error from './pages/Error/Error';
 import PrivateRoute from "./PrivateRoute";
-import AboutProduct from "./pages/AboutProduct/AboutProduct"
+import AboutProduct from "./pages/AboutProduct/AboutProduct";
 
 const AppRouter = () => (
   <BrowserRouter>
