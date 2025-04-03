@@ -3,13 +3,12 @@ import ProductCard from "../../components/ProductCard/ProductCard";
 import LogoRozetkaSvg from 'D:/hillel_front-end_pro/panel-rozetka/my-app/src/assets/rozetkaLogo.svg';
 import { useState, useEffect } from 'react';
 import { API_URL } from '../../constants';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const ProductPreview = () => {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
     const navigate = useNavigate();
-    const { productId } = useParams();
 
     useEffect(() => {
         const fetchProducts = async () => {
@@ -57,9 +56,12 @@ const ProductPreview = () => {
     const handleProductClick = (Id) => {
         navigate(`/product-preview/${Id}`);
     };
+    const handleTablePageClick = () => {
+        navigate('/product-table');
+    };
     return(
         <div className="container">
-            <img src={LogoRozetkaSvg} alt="LogoRozetka" className='RozetkaLogoProductPreview'/>
+            <img src={LogoRozetkaSvg} alt="LogoRozetka" className='RozetkaLogoProductPreview' onClick={handleTablePageClick}/>
             <div className="innerCards">
             {Array.isArray(products) && products.length > 0 ? (
                 products.map((item) => (
@@ -67,7 +69,7 @@ const ProductPreview = () => {
                         key={item.ID || item.id}
                         image={item.ImageUrl || item.imageUrl}
                         name={item.Name || item.name}
-                        quantity={item.Quantity || item.quantity}
+                        quantity={item.Quantity ?? item.quantity}
                         price={item["Price (€)"] || item.price}
                         isReady={item.IsReady || item.isReady}
                     />

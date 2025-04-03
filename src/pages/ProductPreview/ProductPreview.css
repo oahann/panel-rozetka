@@ -2,8 +2,10 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    width: 1400px;
     row-gap: 40px;
-    column-gap: 20px;
+    column-gap: 40px;
+    margin: 0 auto;
 }
 .RozetkaLogoProductPreview{
     margin: 10px 20px 40px 60px;

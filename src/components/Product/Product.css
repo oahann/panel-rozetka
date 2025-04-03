@@ -1,0 +1,6 @@
+.editButton, .deleteButton{
+    cursor: pointer;
+}
+.editButton{
+    margin-right: 10px;
+}

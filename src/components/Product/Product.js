@@ -1,12 +1,14 @@
-const Product = ({product, headers, onDelete}) =>{
+import './Product.css'
+import { FaPencilAlt, FaRegTrashAlt } from "react-icons/fa";
+const Product = ({className, product, headers, onDelete, onEdit}) =>{
     return(
-    <tr>
-           {headers.map((header, index) => (
+    <tr className={className}>
+        {headers.map((header, index) => (
         <td key={index}>{product[header]}</td>
       ))}
       <td>
-        <button>✏️</button>
-        <button onClick={onDelete}>🗑️</button>
+        <FaPencilAlt className="editButton" onClick={() => onEdit(product)}/>
+        <FaRegTrashAlt className='deleteButton'onClick={onDelete}/>
       </td>
     </tr>
     )

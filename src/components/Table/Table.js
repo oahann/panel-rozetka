@@ -1,15 +1,15 @@
 import './Table.css';
 import Product from '../Product/Product'
    
-const Table = ({ products, onDelete }) => {
+const Table = ({ products, onDelete, onEdit }) => {
   const headers = products.length > 0
     ? Object.keys(products[0]).filter(key => key !== 'ImageUrl' && key !== 'IsReady')
     : [];
 
   return (
-    <table>
+    <table className='productTable'>
      <thead>
-        <tr>
+        <tr className='tableHeader'>
           {headers.map((header, index) => (
             <th key={index}>{header}</th>
           ))}
@@ -18,7 +18,12 @@ const Table = ({ products, onDelete }) => {
       </thead>
       <tbody>
         {products.map((product, index) => (
-          <Product key={index} product={product} headers={headers} onDelete={() => onDelete(product)}/>
+          <Product className={index % 2 === 0 ? 'evenRow' : 'oddRow'}
+           key={index} 
+           product={product} 
+           headers={headers} 
+           onDelete={() => onDelete(product)} 
+           onEdit={() => onEdit(product)}/>
         ))}
       </tbody>
     </table>

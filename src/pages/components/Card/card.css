@@ -1,4 +1,4 @@
-.card{
+.logInCard{
     margin: 0 auto;
     width: 500px;
     height: 670px;
@@ -7,4 +7,5 @@
     justify-content: center;   
     background-color:#F5F5F5;
     align-items: center;
+    margin-top: 20px;
 }

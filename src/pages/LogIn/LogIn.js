@@ -57,15 +57,15 @@ const LogIn = () => {
 
     return (
         <div className="container">
-            <Card className="card">
+            <Card className="logInCard">
                 <div>
-                    <img src={LogoRozetkaSvg} alt="Rozetka Logo" />
+                    <img src={LogoRozetkaSvg} alt="LogoRozetka"/>
                 </div>
                 <form className="InnerInputs" onSubmit={handleLogin}>
                     <div className="input-container">
                         <Input
                             type="text"
-                            placeholder="User Name"
+                            placeholder="Username"
                             className="userName"
                             value={username}
                             onChange={(e) => {

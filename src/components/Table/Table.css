@@ -1,4 +1,4 @@
-.tableHeader {
+  .tableHeader {
     background-color: #eddde4;
     color: black;
   }
@@ -13,7 +13,6 @@
     background-color: #eddde4; 
     color: #8C4763; 
   }
-
   .productTable{
     width: 65%;
     margin: 0 auto;

@@ -1,0 +1,17 @@
+.deleteBtn{
+    background-color: #D6BCC5;
+    border-color: #D6BCC5;
+    margin-left: 10px;
+}
+.deleteBtn:hover{
+    background-color: #8C4763;
+    border-color: #8C4763;
+}
+.headerConfirmationDeleteModal{
+    font-size: 19px;
+    text-align: center;
+}
+.btnsModal{
+    text-align: center;
+    padding: 0 0 10px 0;
+}

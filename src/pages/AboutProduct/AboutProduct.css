@@ -1,0 +1,48 @@
+.LogoRozetkaAboutProduct{
+    margin: 15px 80px 15px 40px;
+}
+.backgroundForImage{
+    display: flex;
+    width: 100%;
+    background-color: #D6BCC5;
+}
+.ArrowNName{
+    display: flex;
+}
+.arrow{
+    font-size: 22px;
+    margin: 20px 0 0 40px;
+}
+.productName{
+    font-size: 32px;
+    margin: 10px 0 0 20px;
+}
+.productInfoNImg{
+    display: flex;
+    margin: 20px 0 0 40px;
+}
+.productInfo{
+    display: flex;
+    column-gap: 10px;
+    flex-direction: column;
+    justify-content: start;
+    margin-left: 50px;
+    font-size: 24px;
+}
+.productImg{
+    width: 300px;
+    height: auto;
+}
+.productDescNName{
+    display: flex;
+    column-gap: 10px;
+    margin-left: 40px;
+    font-size: 25px;
+}
+.descriptionProductName{
+    color: #8C4763;
+}
+.description{
+    font-size: 25px;
+    margin-left: 40px;
+}

@@ -1,7 +1,10 @@
+import './AboutProduct.css'
 import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { API_URL } from "../../constants";
 import { FaArrowLeft } from "react-icons/fa";
+import { TiShoppingCart } from "react-icons/ti";
+import LogoRozetka from '../../assets/rozetkaLogo.svg'
 
 const AboutProduct = () => {
     const { productId } = useParams();
@@ -43,13 +46,37 @@ const AboutProduct = () => {
     }
 
     return (
-        <div>
-            <FaArrowLeft onClick ={handleBack} style={{ cursor: "pointer" }}/>
-            <h1>{product.Name || product.name}</h1>
-            <p>ID: {product.id || product.ID}</p>
-            <p>Ціна: {product["Price (€)"] || product.Price} €</p>
-            <p>Кількість: {product.quantity || product.Quantity}</p>
-            <img src={product.imageUrl || product.ImageUrl} alt={product.name}/>
+        <div className='container'>
+            <div className='backgroundForImage'>
+                <img src={LogoRozetka} alt="LogoRozetka" className="LogoRozetkaAboutProduct"/>
+            </div>
+            <div className='ArrowNName'>
+                <FaArrowLeft className='arrow' onClick ={handleBack} style={{ cursor: "pointer" }}/>
+                <h1 className='productName'>{product.Name || product.name}</h1>
+            </div>
+            <div className='productInfoNImg'>
+                <div >            
+                    <img className='productImg' src={product.imageUrl || product.ImageUrl} alt={product.name}/>
+                </div>
+                <div className='productInfo'>
+                    <p>
+                        {product.isReady ? (
+                        <>
+                        <TiShoppingCart/> Готовий до відправки
+                        </>
+                    ) : (
+                    "Чекаємо"
+                    )}
+                    </p>
+                    <p>{product["Price (€)"] || product.Price} €</p>
+                    <p>Quantity: {product.quantity || product.Quantity}</p>
+                </div>
+            </div>
+            <div className='productDescNName'>
+            <p>Description: </p>
+            <p className='descriptionProductName'>{product.Name || product.name}</p>
+            </div>
+            <p className='description'>{product.description || product.Description}</p>
         </div>
     );
 };
